@@ -1,4 +1,4 @@
-## Minimal GPT Implementation (from scratch)
+## Minimal GPT Implementation
 
 This project is a minimal, learning-oriented implementation of a GPT-like
 language model built entirely from scratch.
