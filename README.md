@@ -1,7 +1,40 @@
-## Learning Repository
+# Learning Repository
 
-This repository is a collection of **learning-oriented implementations and experiments**
-related to machine learning, large language models (LLMs), and adjacent topics.
+機械学習、LLM、大規模言語モデル周辺技術に関する学習・実装・実験をまとめたリポジトリです。
 
-The primary purpose of this repository is to build and document **conceptual understanding,
-implementation-level insight, and experimental intuition**, rather than production-ready systems.
+## 概要
+
+このリポジトリは、機械学習や LLM に関する理解を深めることを目的として作成した、学習用の実装集です。  
+本番運用を前提とした完成品を置く場ではなく、概念理解、実装理解、実験的検証を進めるための記録と整理の場として運用しています。
+
+## 目的
+
+このリポジトリの主な目的は以下です。
+
+- 機械学習・LLM 関連技術の理解を深めること
+- 小規模実装を通じて仕組みを把握すること
+- 実験を通じて挙動や設計意図を確認すること
+- 学習過程を記録し、後から参照できる形で残すこと
+
+## 方針
+
+このリポジトリに含まれる内容は、**学習用途・検証用途**を前提としています。  
+そのため、以下の方針で構成しています。
+
+- できるだけ小さく理解しやすい実装を重視する
+- 理論だけでなく、実際に動かして確認する
+- 完成度よりも学習価値を優先する
+- 必要に応じて試行錯誤の途中経過も残す
+
+## ディレクトリ
+
+### `minimal-gpt`
+GPT 系モデルの最小構成実装や、その理解のためのコードを置く予定のディレクトリです。
+
+### `minimal-rag-system`
+RAG（Retrieval-Augmented Generation）の基本構成を小さく実装し、仕組みを理解するためのディレクトリです。
+
+## 補足
+
+このリポジトリは、学習の進行に応じて内容が増減したり、構成が変わる可能性があります。  
+実験途中のコードや整理中の内容を含む場合があります。
