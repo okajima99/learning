@@ -1,28 +1,30 @@
-## Minimal RAG System (Local LLM + Retrieval)
+# Minimal RAG System（ローカル LLM + RAG）
 
-This project is a **learning-oriented implementation of a Retrieval-Augmented Generation (RAG) system**
-built from scratch using a local LLM and a simple retrieval pipeline.
+このプロジェクトは、ローカル LLM とシンプルな検索パイプラインを用いて RAG（Retrieval-Augmented Generation）を最小構成で実装した、**学習用途のプロジェクト**です。  
+本番向けの RAG サービスを作ることではなく、**検索・プロンプト構築・生成がどのようにつながるかを実装レベルで理解すること**を目的としています。
 
-The goal is to understand **how retrieval, prompt construction, and generation are connected**
-at the implementation level, rather than to build a production-grade RAG service.
+## このプロジェクトを作った理由
 
-### Motivation
-This project was created to:
-- Understand the end-to-end flow of a RAG system (ingestion → retrieval → generation)
-- Implement document indexing and similarity-based retrieval manually
-- Connect a local LLM to external knowledge via a lightweight API
+この実装は、以下を自分で確認するために作成しました。
 
-### Scope
-- Document ingestion and preprocessing
-- Vector-based retrieval logic
-- Simple RAG API (query → retrieve → generate)
-- Client-side request flow to a local LLM backend
+- RAG システム全体の流れ（取り込み → 検索 → 生成）を理解する
+- 文書インデックス化と検索を自力で実装する
+- ローカル LLM と外部知識を軽量な API 経由で接続する
 
-### Notes / Limitations
-- Designed for small-scale, local experimentation
-- Retrieval quality and latency are not optimized
-- Not intended for large datasets or production deployment
+## スコープ
 
-This project serves as a **foundation-level experiment** to clarify
-why modern RAG systems rely on careful system design, indexing strategies,
-and scalable infrastructure in real-world applications.
+このプロジェクトでは、主に以下を扱います。
+
+- 文書の取り込みと前処理
+- シンプルな RAG API（問い合わせ → 検索 → 生成）
+- ローカル LLM バックエンドへのクライアント側リクエストフロー
+
+## 注意点・制約
+
+- 小規模なローカル実験を前提として設計しています
+- 検索品質やレイテンシは最適化していません
+- 大規模データセットや本番環境での運用は想定していません
+
+## 補足
+
+このプロジェクトは、現代の RAG システムがなぜ慎重なシステム設計、インデックス戦略、スケーラブルな基盤を必要とするのかを理解するための、**基礎実験**として位置づけています。
