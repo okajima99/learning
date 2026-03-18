@@ -1,57 +1,71 @@
-## Minimal GPT Implementation
+# Minimal GPT 実装（スクラッチ実装）
 
-This project is a minimal, learning-oriented implementation of a GPT-like
-language model built entirely from scratch.
+このプロジェクトは、GPT 系言語モデルをスクラッチで最小構成実装した、**学習用途の実験プロジェクト**です。  
+性能や実運用を目的とするのではなく、Transformer ベースの言語モデルを**概念レベル・実装レベルの両方から理解すること**を目的としています。
 
-The goal of this project is conceptual and implementation-level understanding
-of Transformer-based language models, rather than performance or production use.
+## このプロジェクトを作った理由
 
-### Motivation
-Before relying on large pretrained models, this experiment was conducted to:
-- Understand the internal structure of GPT-style Transformers
-- Implement the full training and generation pipeline manually
-- Observe how data scale and generation parameters affect model behavior
+大規模な事前学習済みモデルをそのまま使う前に、以下を自分の手で確認したいと考え、この実装を行いました。
 
-### Scope
-- Token-based language modeling
-- Autoregressive Transformer architecture
-- Training loop and checkpointing
-- Text generation with configurable parameters
+- GPT 系 Transformer の内部構造を理解する
+- 学習から生成までの流れを一通り自力で実装する
+- データ量や生成パラメータの違いが出力にどう影響するかを観察する
 
-### Usage
+## スコープ
 
-#### Training
-Train the model on a plain text corpus.
+この実装では、主に以下を対象としています。
 
-python mini_ja_gpt_all_in_one.py --mode train --data_path <path_to_text_file>
+- トークンベースの言語モデリング
+- 自己回帰型 Transformer アーキテクチャ
+- 学習ループとチェックポイント保存
+- パラメータを調整可能なテキスト生成
 
-Input:
-- A single UTF-8 encoded plain text file
+## 使い方
 
-Output:
-- A checkpoint file containing trained model parameters
+### 学習
 
-#### Text Generation
-Generate text from a trained checkpoint and a given prompt.
+プレーンテキストのコーパスを用いてモデルを学習します。
 
-python mini_ja_gpt_all_in_one.py --mode generate --prompt "Your prompt here" --ckpt_path <checkpoint_path>
+```bash
+python mini_ja_gpt_all_in_one.py --mode train --data_path <TEXT_FILE>
+```
 
-#### Simple Chat Mode
-Run a lightweight, terminal-based chat loop using a trained model.
+入力:
+- UTF-8 でエンコードされた単一のテキストファイル
 
-python mini_ja_gpt_all_in_one.py --mode chat --ckpt_path <checkpoint_path>
+出力:
+- 学習済みパラメータを含むチェックポイントファイル
 
-For a full list of available arguments:
+### テキスト生成
 
+学習済みチェックポイントとプロンプトを指定して文章生成を行います。
+
+```bash
+python mini_ja_gpt_all_in_one.py --mode generate --prompt "Your prompt here" --ckpt_path <CHECKPOINT_FILE>
+```
+
+### 簡易チャットモード
+
+学習済みモデルを用いた、軽量なターミナルベースの対話モードです。
+
+```bash
+python mini_ja_gpt_all_in_one.py --mode chat --ckpt_path <CHECKPOINT_FILE>
+```
+
+### 引数一覧
+
+```bash
 python mini_ja_gpt_all_in_one.py --help
+```
 
-### Limitations and Reflections
+## 制約と所感
 
-- Model and dataset sizes are intentionally small, resulting in limited output quality.
-- Training speed and scalability are constrained by the simplicity of the implementation.
-- Tokenization, optimization, and training stability are simplified for clarity.
-- This experiment highlights that practical LLM performance requires large-scale data,
-  substantial compute resources, and extensive engineering.
-- In real-world applications, pretrained models and mature frameworks should be used.
+- モデルサイズとデータセットサイズは意図的に小さくしており、出力品質には限界があります
+- 実装を簡潔にしているため、学習速度や拡張性は高くありません
+- トークナイズ、最適化、学習安定化の設計は理解しやすさを優先して単純化しています
+- 実用的な LLM の性能には、大規模データ・大規模計算資源・多くのエンジニアリングが必要であることを確認するための実験でもあります
 
-This project is intended as a learning artifact, not a reusable production library.
+## 補足
+
+実運用では、既存の事前学習済みモデルや成熟したフレームワークを使うのが一般的です。  
+このプロジェクトは再利用可能な本番用ライブラリではなく、**LLM の仕組みを理解するための学習用成果物**として位置づけています。
